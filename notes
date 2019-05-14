@@ -1,0 +1,116 @@
+mavenExecutionResult exceptions not empty
+message : Plugin org.apache.maven.plugins:maven-dependency-plugin:2.1 or one of its dependencies could not be resolved: Failed to read artifact descriptor for org.apache.maven.plugins:maven-dependency-plugin:jar:2.1
+cause : Failed to read artifact descriptor for org.apache.maven.plugins:maven-dependency-plugin:jar:2.1
+Stack trace : 
+
+
+failed to read artifact descriptor 
+failed to read dependency tag
+
+
+run maven with -e or -x to troubleshoot using log stacks 
+
+
+Answer: Define proxy in settings.xml
+
+****
+
+The settings element in the settings.xml file contains elements used to define values which configure Maven execution in various ways, like the pom.xml, but should not be bundled to any specific project, or distributed to an audience. These include values such as the local repository location, alternate remote repository servers, and authentication information.
+
+There are two locations where a settings.xml file may live:
+
+The Maven install: ${maven.home}/conf/settings.xml
+A user’s install: ${user.home}/.m2/settings.xml
+
+_________________________________
+
+
+Nexus is simply a collection of shared directories with a naming convention ( group.artifact.version ).
+As described in "What is a repository": a collection of binary software artifacts and metadata stored in a defined directory structure.
+
+You manage what you code in Git, and what you build in Nexus.
+
+Sonar is an open source platform used by development teams to manage source code quality
+
+____________________________________________________________
+
+ERROR: Failed to parse POMs
+org.apache.maven.project.ProjectBuildingException: Some problems were encountered while processing the POMs:
+[FATAL] Non-resolvable parent POM: Failure to find com.acme.project.platform:app-one:pom:2016.5.2 in http://repo.maven.apache.org/maven2 was cached in the local repository, resolution will not be reattempted until the update interval of central has elapsed or updates are forced...
+
+
+Answer: Configure the settings.xml file globally (via Jenkins > Mange Jenkins > Configure System - Maven Configuration).
+
+If multiple maven configuration( for QA Test prod), set as- use default maven global settings
+
+
+____________________________________________________________
+
+Docker:
+
+***Tell us how you have used Docker in your past position?
+Explain how you have used Docker to help rapid deployment. Explain how you have scripted Docker and used Docker with other tools like Puppet, Chef or Jenkins.
+
+******How far do Docker containers scale?
+Large web deployments like Google and Twitter, and platform providers such as Heroku and dotCloud all run on container technology, at a scale of hundreds of thousands or even millions of containers running in parallel
+
+****What platforms does Docker run on?
+I will start this answer by saying Docker runs on only Linux and Cloud platforms and then I will mention the below vendors of Linux:
+
+Ubuntu 12.04, 13.04 et al
+Fedora 19/20+
+RHEL 6.5+
+CentOS 6+
+Gentoo
+ArchLinux
+openSUSE 12.3+
+CRUX 3.0+
+Cloud:
+
+Amazon EC2
+Google Compute Engine
+Microsoft Azure
+Rackspace
+
+*****Do I lose my data when the Docker container exits?
+You can answer this by saying, no I won’t lose my data when Docker container exits, any data that your application writes to disk gets preserved in its container until you explicitly delete the container. The file system for the container persists even after the container halts.
+
+***********
+
+Commands:
+
+dockerd: launch docker daemon
+info: display system wide info
+inspect: low level info on container and image
+history: gets you history of the image
+commit: create new container from the containers changes
+load: build an image from a tar or stdin
+docker logs -f container_id or docker logs -follow container_id>>>> view real time logging of containers
+
+
+
+____________________________________________________
+
+
+End to end pipelines
+
+pipeline project
+
+branching merging
+
+run the jenkins in container
+
+migration of onpremise to cloud
+
+
+docker network create newNet
+
+docker network inspect newNet
+
+how is docker used in your infrastructure
+
+
+
+
+https://medium.com/@jimkang/how-to-start-a-new-jenkins-container-and-update-jenkins-with-docker-cf628aa495e9
+
